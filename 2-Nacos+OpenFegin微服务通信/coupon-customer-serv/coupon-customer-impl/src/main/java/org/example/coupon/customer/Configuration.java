@@ -1,6 +1,7 @@
 package org.example.coupon.customer;
 
 
+import feign.Logger;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -11,9 +12,13 @@ public class Configuration {
     /*
        注册一个WebClient 的实例用来远程调用
     * */
+//    @Bean
+//    @LoadBalanced
+//    public WebClient.Builder register(){
+//        return WebClient.builder();
+//    }
     @Bean
-    @LoadBalanced
-    public WebClient.Builder register(){
-        return WebClient.builder();
+    Logger.Level feignLogger(){
+        return Logger.Level.FULL;
     }
 }

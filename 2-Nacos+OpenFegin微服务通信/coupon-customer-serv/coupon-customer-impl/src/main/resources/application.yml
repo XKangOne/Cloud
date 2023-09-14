@@ -54,7 +54,20 @@ spring:
         register-enabled: true
         # 优先从本地缓存读取服务配置
         naming-load-cache-at-start: false
-
+    openfeign:
+      client:
+        default-config:
+        config:
+          coupon-template-feign-client:
+            connectTimeout: 2000
+            readTimeout: 3000
+            loggerLevel: full
+          coupon-calculation-feign-client:
+            connectTimeout: 2000
+            readTimeout: 3000
+            loggerLevel: full
 logging:
   level:
-    top.mqxu.coupon: debug
+    org.example.coupon: debug
+    org.example.coupon.customer.feign.TemplateService: debug
+    org.example.coupon.customer.feign.CalculationService: debug
