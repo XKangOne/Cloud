@@ -1,9 +1,10 @@
 package org.example.coupon.template.dao.converter;
 
 import com.alibaba.fastjson.JSON;
-import jakarta.persistence.AttributeConverter;
-import jakarta.persistence.Converter;
 import org.example.coupon.template.beans.rules.TemplateRule;
+
+import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
 
 /**
  * RuleConverter

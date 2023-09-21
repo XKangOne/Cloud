@@ -1,11 +1,13 @@
 package org.example.coupon.template.beans;
 
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.example.coupon.template.beans.rules.TemplateRule;
+
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 /**
  * @description CouponTemplateInfo——封装优惠券模板的基本信息
@@ -18,7 +20,7 @@ public class CouponTemplateInfo {
 
     private Long id;
 
-    @NotNull
+    @NotEmpty
     private String name;
 
     /**

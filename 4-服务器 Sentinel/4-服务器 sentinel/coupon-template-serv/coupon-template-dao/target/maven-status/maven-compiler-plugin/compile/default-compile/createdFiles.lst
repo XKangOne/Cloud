@@ -1,0 +1,5 @@
+top\chen\coupon\template\dao\CouponTemplateDao.class
+top\chen\coupon\template\dao\entity\CouponTemplate$CouponTemplateBuilder.class
+top\chen\coupon\template\dao\entity\CouponTemplate.class
+top\chen\coupon\template\dao\converter\CouponTypeConverter.class
+top\chen\coupon\template\dao\converter\RuleConverter.class

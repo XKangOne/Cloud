@@ -1,13 +1,11 @@
 package org.example.coupon.template.api.beans;
 
 
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.PrimitiveIterator;
+import javax.validation.constraints.NotNull;
 
 @Data
 @NoArgsConstructor

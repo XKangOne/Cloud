@@ -1,13 +1,14 @@
 package org.example.coupon.calculation.controller;
 
 import com.alibaba.fastjson.JSON;
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.example.coupon.calculation.service.CouponCalculationService;
 import org.example.coupon.template.api.beans.ShoppingCart;
 import org.example.coupon.template.api.beans.SimulationOrder;
 import org.example.coupon.template.api.beans.SimulationResponse;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
 
 /**
  * @author mqxu

@@ -24,6 +24,8 @@ import java.lang.reflect.ParameterizedType;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static org.example.coupon.customer.constant.Constant.TRAFFIC_VERSION;
+
 /**
  * @author mqxu
  * @date 2023/9/8
@@ -126,7 +128,15 @@ public class CouponCustomerServiceImpl implements CouponCustomerService {
      */
     @Override
     public Coupon requestCoupon(RequestCoupon request) {
-        CouponTemplateInfo templateInfo = templateService.loadTemplateInfo(request.getCouponTemplateId());
+//        CouponTemplateInfo templateInfo = templateService.loadTemplateInfo(request.getCouponTemplateId());
+
+        CouponTemplateInfo templateInfo = webClientBuilder.build()
+                .get()
+                .uri("http://coupon-template-serve/template/getTemplate?id=" + request.getCouponTemplateId())
+                .header(TRAFFIC_VERSION, request.getTrafficVersion())
+                .retrieve()
+                .bodyToMono(CouponTemplateInfo.class)
+                .block();
 
         // 模板不存在则报错
         if (templateInfo == null) {

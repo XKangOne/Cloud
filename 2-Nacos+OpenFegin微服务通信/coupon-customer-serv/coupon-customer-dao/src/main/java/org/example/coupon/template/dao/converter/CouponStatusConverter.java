@@ -1,9 +1,10 @@
 package org.example.coupon.template.dao.converter;
 
 
-import jakarta.persistence.AttributeConverter;
-import jakarta.persistence.Converter;
 import org.example.coupon.template.api.enums.CouponStatus;
+
+import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
 
 
 /**

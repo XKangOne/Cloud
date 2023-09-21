@@ -1,12 +1,11 @@
 package org.example.coupon.template.service.impl;
 
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.example.coupon.template.dao.CouponTemplateDao;
 import org.example.coupon.template.beans.CouponTemplateInfo;
 import org.example.coupon.template.beans.PagedCouponTemplateInfo;
 import org.example.coupon.template.beans.TemplateSearchParams;
 import org.example.coupon.template.converter.CouponTemplateConverter;
+import org.example.coupon.template.dao.CouponTemplateDao;
 import org.example.coupon.template.dao.entity.CouponTemplate;
 import org.example.coupon.template.enums.CouponType;
 import org.example.coupon.template.service.CouponTemplateService;
@@ -17,6 +16,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;

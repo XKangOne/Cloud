@@ -1,8 +1,9 @@
 package org.example.coupon.template.dao.converter;
 
-import jakarta.persistence.AttributeConverter;
-import jakarta.persistence.Converter;
 import org.example.coupon.template.enums.CouponType;
+
+import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
 
 @Converter
 public class CouponTypeConverter implements AttributeConverter<CouponType, String> {

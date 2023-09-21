@@ -9,9 +9,9 @@ spring:
     name: coupon-customer-serv
   datasource:
     # mysql数据源
-    url: jdbc:mysql://127.0.0.1:3306/coupon_db?autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
+    url: jdbc:mysql://8.130.20.52:3306/coupon_db?autoReconnect=true&useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true&zeroDateTimeBehavior=convertToNull&serverTimezone=UTC
     username: root
-    password: 123456
+    password: 12345678
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     # 连接池
@@ -36,7 +36,7 @@ spring:
     nacos:
       discovery:
         # Nacos 服务器地址，可以配置多个，用，分割
-        server-addr: localhost:8848
+        server-addr: http://8.130.20.52:8848
         # 注册到 Nacos 上的服务名称
         service: coupon-customer-serv
         # 各个微服务向 Nacos 发送心跳的时间间隔，单位是毫秒
@@ -54,20 +54,35 @@ spring:
         register-enabled: true
         # 优先从本地缓存读取服务配置
         naming-load-cache-at-start: false
-    openfeign:
-      client:
-        default-config:
-        config:
-          coupon-template-feign-client:
-            connectTimeout: 2000
-            readTimeout: 3000
-            loggerLevel: full
-          coupon-calculation-feign-client:
-            connectTimeout: 2000
-            readTimeout: 3000
-            loggerLevel: full
+        username: nacos
+        password: nacos
+#    openfeign:
+#      client:
+#        default-config:
+#        config:
+#          coupon-template-feign-client:
+#            connectTimeout: 2000
+#            readTimeout: 3000
+#            loggerLevel: full
+#          coupon-calculation-feign-client:
+#            connectTimeout: 2000
+#            readTimeout: 3000
+#            loggerLevel: full
 logging:
   level:
     org.example.coupon: debug
     org.example.coupon.customer.feign.TemplateService: debug
     org.example.coupon.customer.feign.CalculationService: debug
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 1000
+        readTimeout: 2000
+      coupon-template-serv:
+        connectTimeout: 1000
+        readTimeout: 1500
+  #断路器
+  circuitbreaker:
+    enabled: true

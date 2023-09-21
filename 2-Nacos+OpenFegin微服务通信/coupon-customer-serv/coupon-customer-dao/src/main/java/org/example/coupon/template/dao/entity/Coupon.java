@@ -1,6 +1,5 @@
 package org.example.coupon.template.dao.entity;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,6 +9,8 @@ import org.example.coupon.template.beans.CouponTemplateInfo;
 import org.example.coupon.template.dao.converter.CouponStatusConverter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.*;
 import java.util.Date;
 
 /**

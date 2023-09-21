@@ -1,6 +1,5 @@
 package org.example.coupon.calculation.template;
 
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.example.coupon.calculation.template.impl.*;
@@ -8,6 +7,8 @@ import org.example.coupon.template.api.beans.ShoppingCart;
 import org.example.coupon.template.beans.CouponTemplateInfo;
 import org.example.coupon.template.enums.CouponType;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
 
 /**
  * @author mqxu

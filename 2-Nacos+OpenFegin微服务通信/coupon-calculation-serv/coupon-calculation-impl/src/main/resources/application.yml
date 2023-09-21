@@ -10,8 +10,8 @@ spring:
   cloud:
     nacos:
       discovery:
-        #
-        server-addr: localhost:8848
+        #可以配置多个，逗号隔开
+        server-addr: http://8.130.20.52:8848
         service: coupon-calculation-serv
         heart-beat-interval: 5000
         heart-beat-timeout: 20000
@@ -26,6 +26,8 @@ spring:
         register-enabled: true
         #优先从本地缓存读取服务配置
         naming-load-cache-at-start: false
+        username: nacos
+        password: nacos
 
 logging:
   level:

@@ -1,8 +1,7 @@
 package org.example.coupon.template.controller;
 
 import com.alibaba.fastjson.JSON;
-import jakarta.annotation.Resource;
-import jakarta.validation.Valid;
+
 import lombok.extern.slf4j.Slf4j;
 import org.example.coupon.template.beans.TemplateSearchParams;
 import org.example.coupon.template.service.CouponTemplateService;
@@ -10,6 +9,8 @@ import org.example.coupon.template.beans.CouponTemplateInfo;
 import org.springframework.web.bind.annotation.*;
 import org.example.coupon.template.beans.PagedCouponTemplateInfo;
 
+import javax.annotation.Resource;
+import javax.validation.Valid;
 import java.util.Collection;
 import java.util.Map;
 
@@ -71,6 +72,8 @@ public class CouponTemplateController {
     @GetMapping("/getBatch")
     public Map<Long, CouponTemplateInfo> getTemplateInBatch(@RequestParam("ids") Collection<Long> ids) {
         log.info("getTemplateInBatch: {}", JSON.toJSONString(ids));
+        log.info("getTemplateInBatch: 被调用");
+        int a = 1 / 0;
         return couponTemplateService.getTemplateInfoMap(ids);
     }
 

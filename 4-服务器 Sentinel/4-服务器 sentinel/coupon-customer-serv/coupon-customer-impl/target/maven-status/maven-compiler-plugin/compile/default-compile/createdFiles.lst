@@ -1,0 +1,10 @@
+top\chen\coupon\customer\controller\CouponCustomerController.class
+top\chen\coupon\customer\converter\CouponConverter.class
+top\chen\coupon\customer\feign\fallback\TemplateServiceFallback.class
+top\chen\coupon\customer\service\impl\CouponCustomerServiceImpl.class
+top\chen\coupon\customer\CustomerApplication.class
+top\chen\coupon\customer\feign\fallback\TemplateServiceFallbackFactory$1.class
+top\chen\coupon\customer\feign\fallback\TemplateServiceFallbackFactory.class
+top\chen\coupon\customer\feign\TemplateService.class
+top\chen\coupon\customer\feign\CalculationService.class
+top\chen\coupon\customer\service\CouponCustomerService.class

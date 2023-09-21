@@ -1,0 +1,11 @@
+top\chen\coupon\template\api\beans\CouponInfo.class
+top\chen\coupon\template\api\beans\TemplateSearchParams$TemplateSearchParamsBuilder.class
+top\chen\coupon\template\api\beans\CouponInfo$CouponInfoBuilder.class
+top\chen\coupon\template\api\beans\CouponTemplateInfo$CouponTemplateInfoBuilder.class
+top\chen\coupon\template\api\beans\TemplateSearchParams.class
+top\chen\coupon\template\api\beans\rules\TemplateRule.class
+top\chen\coupon\template\api\enums\CouponType.class
+top\chen\coupon\template\api\beans\CouponTemplateInfo.class
+top\chen\coupon\template\api\beans\rules\Discount.class
+top\chen\coupon\template\api\beans\PagedCouponTemplateInfo$PagedCouponTemplateInfoBuilder.class
+top\chen\coupon\template\api\beans\PagedCouponTemplateInfo.class

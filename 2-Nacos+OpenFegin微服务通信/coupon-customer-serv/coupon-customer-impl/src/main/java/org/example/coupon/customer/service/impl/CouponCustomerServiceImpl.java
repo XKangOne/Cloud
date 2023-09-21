@@ -1,10 +1,9 @@
 package org.example.coupon.customer.service.impl;
+
 import com.google.common.collect.Lists;
-import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.BooleanUtils;
-import org.example.coupon.calculation.service.CouponCalculationService;
 import org.example.coupon.customer.converter.CouponConverter;
 import org.example.coupon.customer.feign.CalculationService;
 import org.example.coupon.customer.feign.TemplateService;
@@ -15,14 +14,11 @@ import org.example.coupon.template.beans.CouponInfo;
 import org.example.coupon.template.beans.CouponTemplateInfo;
 import org.example.coupon.template.dao.CouponDao;
 import org.example.coupon.template.dao.entity.Coupon;
-import org.example.coupon.template.service.CouponTemplateService;
-import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.reactive.function.client.WebClient;
 
-import java.lang.reflect.ParameterizedType;
+import javax.annotation.Resource;
 import java.util.*;
 import java.util.stream.Collectors;
 

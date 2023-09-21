@@ -1,7 +1,5 @@
 package org.example.coupon.customer.controller;
 
-import jakarta.annotation.Resource;
-import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.example.coupon.customer.service.CouponCustomerService;
 import org.example.coupon.template.api.beans.*;
@@ -9,7 +7,8 @@ import org.example.coupon.template.beans.CouponInfo;
 import org.example.coupon.template.dao.entity.Coupon;
 import org.springframework.web.bind.annotation.*;
 
-
+import javax.annotation.Resource;
+import javax.validation.Valid;
 import java.util.List;
 
 /**

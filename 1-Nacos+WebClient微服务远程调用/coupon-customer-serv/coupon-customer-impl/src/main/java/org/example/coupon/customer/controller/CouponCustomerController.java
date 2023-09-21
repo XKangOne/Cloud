@@ -25,8 +25,10 @@ public class CouponCustomerController {
     @Resource
     private CouponCustomerService customerService;
 
+    //领券服务
     @PostMapping("requestCoupon")
     public Coupon requestCoupon(@Valid @RequestBody RequestCoupon request) {
+        log.info(request.toString());
         return customerService.requestCoupon(request);
     }
 
