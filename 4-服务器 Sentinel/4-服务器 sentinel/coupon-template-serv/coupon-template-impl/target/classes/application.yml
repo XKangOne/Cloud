@@ -49,5 +49,7 @@ spring:
         naming-load-cache-at-start: false
     sentinel:
       transport:
+        # sentinel api 端口，默认 8719
         port: 8719
+        #doshboard地址
         dashboard: localhost:8080

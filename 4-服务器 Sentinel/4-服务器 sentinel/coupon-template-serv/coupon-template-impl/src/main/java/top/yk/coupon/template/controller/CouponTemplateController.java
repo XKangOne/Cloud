@@ -16,6 +16,7 @@ import top.yk.coupon.template.service.CouponTemplateService;
 
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -74,19 +75,60 @@ public class CouponTemplateController {
      * @return {@link Map<Long, CouponTemplateInfo>}
      */
     @GetMapping("/getBatch")
-    @SentinelResource(value = "getTemplateInBatch", blockHandler = "getTemplateInBatchBlock")
+    @SentinelResource(value = "getTemplateInBatch", blockHandler = "getTemplateInBatchBlock",fallback = "getTemplateInBatchFallback")
     public Map<Long, CouponTemplateInfo> getTemplateInBatch(@RequestParam("ids") Collection<Long> ids) {
+        //如果接口被熔断，观察以下日志是否被打印
         log.info("getTemplateInBatch: {}", JSON.toJSONString(ids));
+        log.info("getTemplateInBatch 被调用！！！");
+        //当 Template 批量查询服务的ID数量为3时抛出异常，验证熔断器的效果
+        if (ids.size() == 3) {
+            throw new RuntimeException();
+        }
+
         return couponTemplateService.getTemplateInfoMap(ids);
     }
 
+    /*
+    * 批量查询优惠券模板接口被限流时的方法
+    * */
     public Map<Long, CouponTemplateInfo> getTemplateInBatchBlock(Collection<Long> ids, BlockException exception) {
-        log.info("接口被限流");
-        log.info(ids.toString());
-        log.info(exception.getMessage());
-        return Maps.newHashMap();
+        log.info("批量查询优惠券模板接口被限流");
+        CouponTemplateInfo couponTemplateInfo = CouponTemplateInfo.builder()
+                .name("限流后返回的优惠券")
+                .desc("限流后返回的优惠券")
+                .type("1")
+                .rule(null)
+                .build();
+        Map<Long, CouponTemplateInfo> map = new HashMap<>();
+        map.put(1L,couponTemplateInfo);
+        return map;
+
+        //        log.info("接口被限流");
+//        log.info(ids.toString());
+//        log.info(exception.getMessage());
+//        return Maps.newHashMap();
     }
 
+    /*
+    * 批量查询优惠券模板接口被降级时的方法
+    * */
+    public Map<Long, CouponTemplateInfo> getTemplateInBatchFallback(Collection<Long> ids) {
+        log.info("批量查询优惠券模板接口被降级");
+        CouponTemplateInfo couponTemplateInfo = CouponTemplateInfo.builder()
+                .name("降级后返回的优惠券")
+                .desc("降级后返回的优惠券")
+                .type("1")
+                .rule(null)
+                .build();
+        Map<Long, CouponTemplateInfo> map = new HashMap<>();
+        map.put(1L,couponTemplateInfo);
+        return map;
+
+        //        log.info("接口被限流");
+//        log.info(ids.toString());
+//        log.info(exception.getMessage());
+//        return Maps.newHashMap();
+    }
     /**
      * 搜索模板
      *

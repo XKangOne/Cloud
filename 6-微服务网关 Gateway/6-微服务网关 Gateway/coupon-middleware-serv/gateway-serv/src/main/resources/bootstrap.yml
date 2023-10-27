@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: coupon-gateway-serv
+  cloud:
+    nacos:
+      config:
+        server-addr: localhost:8848
+        namespace: dev
+        group: myGroup
+        file-extension: yml
+        refresh-enabled: true
